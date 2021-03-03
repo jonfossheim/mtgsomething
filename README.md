@@ -10,6 +10,14 @@ https://magicthegathering.io/
 
 I will not be covering styling in this project - I want you to style this using any method of your choosing.
 
+Here is what we want to achieve.
+
+- We want to render a list of cards returned from the api.
+
+- We want to be able to click each card and be sent to a page that performs a fetch specifically for that card.
+
+- We want a reactive UI that changes based on data provided by the API.
+
 ## Project setup
 
 Create your new project call it whatever you want.
@@ -128,8 +136,16 @@ use the useEffect hook to fetch cards from 'https://api.magicthegathering.io/v1/
 
 Take some time to read through the cards data, indentify what data you want to play with and display and make a mental note of that going forward.
 
+## Card component and Specifics
+
 Create a card component to display SOME of the data.
 
 I suggest starting off with the image, the name and the rarity.
 
 (we will perform a fetch to the specific card id later to show more data)
+
+Once this is done, take a look at each card Object, figure out what data you can use to change the color of your card component.
+
+(... This concludes the first part ...)
+
+If you want to continue working on this project, feel free to do so. Second part starting tomorrow.
