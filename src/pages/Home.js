@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_URI } from '../utils/constants';
+import Card from '../components/Card';
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -44,9 +45,11 @@ const Home = () => {
     <>
       {cards.map(card => {
         return (
-          <div key={card.id} style={{ padding: '1rem' }}>
-            <h1>{card.name}</h1>
-          </div>
+          <Card
+            name={card.name}
+            rarity={card.rarity}
+            imageUrl={card.imageUrl}
+          />
         );
       })}
     </>
