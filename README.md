@@ -8,6 +8,10 @@ Please get familiar with the documentation for the API.
 
 https://magicthegathering.io/
 
+I will not be covering styling in this project - I want you to style this using any method of your choosing.
+
+## Project setup
+
 Create your new project call it whatever you want.
 
 <ol>
@@ -26,4 +30,24 @@ I'll make the following (everything inside the ./src folder):
 ./sass/main.scss
 ./components
 ./pages/Home.js
+```
+
+### Configure our router
+
+In App.js
+
+```jsx
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+```
+
+```jsx
+return (
+  <div className={'flex flex-col'}>
+    <Router>
+      <Switch>
+        <Route path='/' exact component={Home} />
+      </Switch>
+    </Router>
+  </div>
+);
 ```
