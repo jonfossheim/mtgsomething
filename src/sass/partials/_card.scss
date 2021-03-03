@@ -1,0 +1,25 @@
+@import './variables';
+
+.cardContainer {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.4rem;
+  margin: 0.2rem;
+  border: 1px solid black;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.common {
+  color: $common;
+}
+.uncommon {
+  color: $uncommon;
+}
+.rare {
+  color: $rare;
+}
+.legendary {
+  color: $legendary;
+}

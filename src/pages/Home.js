@@ -44,11 +44,14 @@ const Home = () => {
   return (
     <>
       {cards.map(card => {
+        
         return (
           <Card
+            key={card.id}
             name={card.name}
             rarity={card.rarity}
-            imageUrl={card.imageUrl}
+            image={card.imageUrl}
+            artist={card.artist}
           />
         );
       })}
