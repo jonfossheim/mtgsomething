@@ -23,7 +23,7 @@ I'll make the following (everything inside the ./src folder):
 
 ```jsx
 ./utils/uris.js
-./sass/main.sass
+./sass/main.scss
 ./components
 ./pages/Home.js
 ```
