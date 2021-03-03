@@ -2,7 +2,7 @@
 
 This week we are creating a web app to display Magic The Gathering (MTG) cards.
 
-We will be utilizing everything we have learned so far, and more to complete this project.
+We will be utilizing everything we have learned so far and more to complete this project.
 
 Please get familiar with the documentation for the API.
 
@@ -16,3 +16,14 @@ Create your new project call it whatever you want.
     <li>Install react-router-dom package</li>
     <li>Install any packages you want(sass, axios, tailwind etc.)</li>
 </ol>
+
+Next I like to create all my folders and files i KNOW that i need.
+
+I'll make the following (everything inside the ./src folder):
+
+```jsx
+./utils/uris.js
+./sass/main.sass
+./components
+./pages/Home.js
+```
