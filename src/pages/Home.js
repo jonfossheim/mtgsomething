@@ -43,11 +43,11 @@ const Home = ({ page }) => {
     return <div>ERROR: An error occured</div>;
   }
 
-  const filtered = cards.filter(card => card.imageUrl);
+  const withImages = cards.filter(card => card.imageUrl);
 
   return (
     <>
-      {filtered.map(card => {
+      {withImages.map(card => {
         return (
           <Link key={card.id} to={`/card/${card.id}`}>
             <Card

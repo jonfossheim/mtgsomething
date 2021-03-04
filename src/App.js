@@ -3,8 +3,10 @@ import { useState } from 'react';
 import Home from './pages/Home';
 import CardSpec from './pages/CardSpec';
 import Navbar from './components/Navbar';
+import FormYup from './pages/examples/FormYup';
 const App = () => {
   const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState('');
 
   const handlePrev = () => {
     if (page === 1) {
@@ -22,13 +24,20 @@ const App = () => {
   return (
     <>
       <Router>
-        <Navbar handleNext={handleNext} handlePrev={handlePrev} page={page} />
-        <div className='pageContainer pt-16'>
+        <Navbar
+          handleNext={handleNext}
+          handlePrev={handlePrev}
+          page={page}
+          setFilter={setFilter}
+          filter={filter}
+        />
+        <div className='pageContainer pt-16 mb-6'>
           <Switch>
             <Route path='/' exact>
-              <Home page={page} />
+              <Home page={page} filter={filter} />
             </Route>
             <Route path='/card/:id' exact component={CardSpec} />
+            <Route path='/form' exact component={FormYup} />
           </Switch>
         </div>
       </Router>
