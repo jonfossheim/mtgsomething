@@ -25,7 +25,7 @@ const Card = props => {
       }}
     >
       <div id='header' className='flex-col'>
-        <img alt={name} className='w-45 rounded-md' src={image} />
+        <img alt={name} className='w-45 rounded-md m-auto' src={image} />
         <div id='body' className='flex flex-col ml-5'>
           <h4 id='name' className='text-xl font-semibold mb-2'>
             {name}

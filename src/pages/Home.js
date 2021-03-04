@@ -2,16 +2,18 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_URI } from '../utils/constants';
 import Card from '../components/Card';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Home = ({ page }) => {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    setLoading(true);
     const fetchCards = async () => {
       try {
-        const response = await axios.get(`${API_URI}/cards`);
+        const response = await axios.get(`${API_URI}/cards?page=${page}`);
         console.log(response);
         if (response.status === 200) {
           setCards(response.data.cards);
@@ -25,7 +27,7 @@ const Home = () => {
       }
     };
     fetchCards();
-  }, []);
+  }, [page]);
 
   if (loading) {
     return (
@@ -41,18 +43,20 @@ const Home = () => {
     return <div>ERROR: An error occured</div>;
   }
 
+  const filtered = cards.filter(card => card.imageUrl);
+
   return (
     <>
-      {cards.map(card => {
-        
+      {filtered.map(card => {
         return (
-          <Card
-            key={card.id}
-            name={card.name}
-            rarity={card.rarity}
-            image={card.imageUrl}
-            artist={card.artist}
-          />
+          <Link key={card.id} to={`/card/${card.id}`}>
+            <Card
+              name={card.name}
+              rarity={card.rarity}
+              image={card.imageUrl}
+              artist={card.artist}
+            />
+          </Link>
         );
       })}
     </>
