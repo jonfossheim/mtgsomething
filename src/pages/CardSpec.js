@@ -9,9 +9,9 @@ const CardSpec = () => {
   const [card, setCard] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  useEffect(() => {}, []);
+
   useEffect(() => {
-    const fetchCards = async () => {
+    const fetchCard = async () => {
       try {
         const response = await axios.get(`${API_URI}/cards/${id}`);
         console.log(response.data.card);
@@ -26,7 +26,7 @@ const CardSpec = () => {
         setLoading(false);
       }
     };
-    fetchCards();
+    fetchCard();
   }, [id]);
 
   if (!id) {
@@ -47,7 +47,30 @@ const CardSpec = () => {
     return <div>ERROR: An error occured</div>;
   }
 
-  return <p>{card.name}</p>;
+  const styles = {
+    wrapper: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'right',
+      maxWidth: '500px'
+    },
+    heading: {
+      fontSize: '2rem'
+    },
+    ogText: {
+      fontSize: '1.2rem'
+    }
+  };
+
+  return (
+    <>
+      <div style={styles.wrapper}>
+        <h2 style={styles.heading}>{card.name}</h2>
+        <img alt={card.name} className='w-13 rounded-md' src={card.imageUrl} />
+        <p style={styles.ogText}>{card.originalText}</p>
+      </div>
+    </>
+  );
 };
 
 export default CardSpec;

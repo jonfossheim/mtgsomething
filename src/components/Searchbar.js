@@ -10,9 +10,9 @@ const Searchbar = ({ register, handleSubmit, errors, filter, setFilter }) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input
-        name='filter'
+        name='name'
         type='text'
-        id='filter'
+        id='name'
         className='w-full pl-3 pr-10 py-2 border-2 border-gray-200 rounded-xl hover:border-gray-300 focus:outline-none focus:border-blue-500 transition-colors'
         placeholder='Filter...'
         onChange={handleChange}

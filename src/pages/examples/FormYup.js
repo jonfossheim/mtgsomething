@@ -21,6 +21,7 @@ const FormYup = () => {
 
   function onSubmit(data) {
     console.log('data', data);
+    // <Page data={data} />
   }
 
   console.log('error', errors);

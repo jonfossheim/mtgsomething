@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import CardSpec from './pages/CardSpec';
 import Navbar from './components/Navbar';
 import FormYup from './pages/examples/FormYup';
+import PropPage from './pages/examples/PropTypes';
 const App = () => {
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('');
@@ -38,6 +39,7 @@ const App = () => {
             </Route>
             <Route path='/card/:id' exact component={CardSpec} />
             <Route path='/form' exact component={FormYup} />
+            <Route path='/proptypes' exact component={PropPage} />
           </Switch>
         </div>
       </Router>
