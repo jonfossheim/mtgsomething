@@ -59,6 +59,9 @@ const CardSpec = () => {
     },
     ogText: {
       fontSize: '1.2rem'
+    },
+    img: {
+      clipPath: 'polygon(0% 0%,0% 100%,100% 100%)'
     }
   };
 
@@ -66,7 +69,12 @@ const CardSpec = () => {
     <>
       <div style={styles.wrapper}>
         <h2 style={styles.heading}>{card.name}</h2>
-        <img alt={card.name} className='w-13 rounded-md' src={card.imageUrl} />
+        <img
+          alt={card.name}
+          className='w-13 rounded-md'
+          styles={styles.img}
+          src={card.imageUrl}
+        />
         <p style={styles.ogText}>{card.originalText}</p>
       </div>
     </>
